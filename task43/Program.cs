@@ -1,6 +1,6 @@
-﻿int[] GetInc(string mess = "k1 b1 k2 b2")
+﻿double[] GetInc(string mess = "k1 b1 k2 b2")
 {
-    int[] array=new int[4];
+    double[] array=new double[4];
     Console.WriteLine($"Введите числа {mess}.");
     for (int i=0, l=0; i<4 ; i++, l+=3)
     {
@@ -10,15 +10,15 @@
     return array;
 }
 
-void Solve(int[]array)
+void Solve(double[]array)
 {
     string[] result = new string[2];
     result[0]="-";
     result[1]="-";
     if (array[0]!=array[2])
     {
-            int x = (array[3]-array[1])/(array[0]-array[2]);
-            int y = x*array[0]+array[1];
+            double x = (array[3]-array[1])/(array[0]-array[2]);
+            double y = x*array[0]+array[1];
             result[0]=$"{x}";
             result[1]=$"{y}";
             Console.WriteLine($"Координаты персечения: ({string.Join(";", result)})");        
@@ -37,6 +37,6 @@ void Solve(int[]array)
     }
 }
 
-int[] array=GetInc();
+double[] array=GetInc();
 Console.WriteLine(string.Join(" ", array));
 Solve(array);
